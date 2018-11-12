@@ -1,19 +1,49 @@
+import {Quotation} from './Quote';
+
 import * as React from 'react';
 import './App.css';
+import Quote from './Quote';
+import Teacup from './Teacup';
 
-import logo from './logo.svg';
+interface State {
+  quotation?: Quotation,
+  error?: string,
+};
 
 class App extends React.Component {
+  public state: State = {};
+
+  public componentDidMount() {
+    fetch('/api/quote', {mode: "cors"})
+      .then(response => {
+        if (response.ok) {
+          return response.json()  
+        }
+        throw new Error('Server returned status: ' + response.status);
+      })
+      .then(quotation => {
+        console.warn(quotation);
+        if (quotation) {
+          console.warn('setting quote:', quotation);
+          this.setState({ quotation });
+        }
+      }).catch(error => {
+        console.warn('error', error);
+        this.setState({ error: error.message });
+      });
+  }
+
   public render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <Teacup />
+          {
+            this.state.quotation
+              ? <Quote className="App-quote" quotation={this.state.quotation} />
+              : <div className="App-error">{this.state.error}</div>
+          }
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
       </div>
     );
   }

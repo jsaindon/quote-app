@@ -1,0 +1,9 @@
+.Quote-quote {
+	font-family: 'Quicksand', sans-serif;
+	text-align: start;
+}
+
+.Quote-name {
+	font-family: 'Libre Baskerville', serif;
+	align-self: flex-end;
+}
