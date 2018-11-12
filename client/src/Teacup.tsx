@@ -1,6 +1,6 @@
 import * as React from 'react';
+import './css/Teacup.css';
 import teacup from './images/teacup.png';
-import './Teacup.css';
 
 class Teacup extends React.Component {
 	public render() {

@@ -1,7 +1,7 @@
 import {Quotation} from './Quote';
 
 import * as React from 'react';
-import './App.css';
+import './css/App.css';
 import Quote from './Quote';
 import Teacup from './Teacup';
 

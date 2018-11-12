@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './Quote.css';
+import './css/Quote.css';
 
 export interface Quotation {
   name: string,

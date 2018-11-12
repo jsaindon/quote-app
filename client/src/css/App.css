@@ -20,6 +20,7 @@
 
 .App-quote {
   display: flex;
+  flex: 1;
   flex-direction: column;
   position: relative;
   width: 50vw;

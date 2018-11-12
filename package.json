@@ -1,16 +1,18 @@
 {
   "name": "quote-app",
   "version": "0.1.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "server.js",
+  "private": true,
   "scripts": {
-    "server": "node server.js",
+    "server": "cd server && npm start && cd ..",
     "client": "cd client && npm start && cd ..",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
-  "dependencies": {
-    "express": "^4.16.4"
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsaindon/quote-app.git"
   },
+  "homepage": "https://github.com/jsaindon/quote-app#readme",
   "devDependencies": {
     "concurrently": "^4.0.1"
   }
